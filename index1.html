@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- =========================================================
+       1. PAGE CONFIGURATION
+       ========================================================= -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Natasha BBQ — Digital Menu</title>
+
+  <meta
+    name="description"
+    content="Digital menu for Natasha BBQ, The Original Gajjar. Starters, main dishes, sizzlers and sides."
+  >
+
+  <meta name="theme-color" content="#0d0d0d">
+
+  <link rel="icon" href="logo.png" type="image/png">
+
+
+  <!-- =========================================================
+       2. GOOGLE FONTS
+       Display font: Kaushan Script (matches the brush-script logo)
+       Body font: Lora (matches the serif lettering on the
+       wooden menu boards)
+       ========================================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =========================================================
+       3. STYLESHEET
+
+       style1.css is self-contained: it holds the colors, fonts,
+       header, menu and footer styles. The old shared style.css
+       is no longer needed for this page.
+       ========================================================= -->
+
+  <link rel="stylesheet" href="style1.css">
+
+</head>
+
+
+<body>
+
+  <!-- =========================================================
+       4. WEBSITE HEADER
+
+       Logo, restaurant name, tagline, and a link back to the
+       homepage.
+       ========================================================= -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <div class="brand-logo">
+        <img
+          src="logo.png"
+          alt="Natasha BBQ logo"
+          width="400"
+          height="400"
+        >
+      </div>
+
+      <div class="brand-copy">
+
+        <h1 class="brand-name">Natasha BBQ</h1>
+
+        <p class="brand-tagline">The Original Gajjar</p>
+
+      </div>
+
+      <a
+        href="index.html"
+        class="home-button"
+        aria-label="Go back to home page"
+      >
+        Home
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       5. MENU CATEGORY NAVIGATION
+
+       script1.js adds one button per menu category here.
+       ========================================================= -->
+
+  <nav
+    class="category-nav"
+    aria-label="Menu categories"
+  >
+
+    <div
+      class="category-nav-scroll"
+      id="category-nav"
+      role="tablist"
+    ></div>
+
+  </nav>
+
+
+  <!-- =========================================================
+       6. DIGITAL MENU CONTENT
+
+       script1.js builds the categories, items and prices here.
+       Edit the menu in script1.js, not in this file.
+       ========================================================= -->
+
+  <main
+    id="menu-content"
+    class="menu-content"
+  ></main>
+
+
+  <!-- =========================================================
+       7. WEBSITE FOOTER
+       ========================================================= -->
+
+  <footer class="site-footer">
+
+    <p class="footer-copyright">
+      © <span id="year"></span> Natasha BBQ.
+      All prices in Tanzanian Shillings.
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================================
+       8. DIGITAL MENU JAVASCRIPT
+       ========================================================= -->
+
+  <script src="script1.js"></script>
+
+</body>
+
+</html>

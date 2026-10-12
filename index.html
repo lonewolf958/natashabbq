@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic Page Settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <!-- Website Title and Description -->
+  <title>Natasha BBQ | The Original Gajjar</title>
+  <meta
+    name="description"
+    content="Natasha BBQ, The Original Gajjar. See our featured dishes and open the table menu."
+  >
+
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <!-- Google Fonts
+       Display: Kaushan Script (matches the brush-script logo)
+       Body: Lora (matches the serif lettering on the wooden menu) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main Stylesheet (self-contained, same look as the table menu) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       1. WEBSITE HEADER
+       Logo, name and tagline only. No hero section.
+       ========================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <div class="brand-logo">
+        <img
+          src="logo.png"
+          alt="Natasha BBQ logo"
+          width="400"
+          height="400"
+        >
+      </div>
+
+      <div class="brand-copy">
+        <h1 class="brand-name">Natasha BBQ</h1>
+        <p class="brand-tagline">The Original Gajjar</p>
+      </div>
+
+      <!-- Location and contact.
+           TO UPDATE: replace the three [bracketed] placeholders here
+           and the same three in the footer. -->
+      <div class="header-strip">
+
+        <div class="header-strip-item">
+          <span class="header-icon" aria-hidden="true">📍</span>
+          <span>Mtendeni Street, </span>
+        </div>
+
+        <div class="header-strip-item">
+          <span class="header-icon" aria-hidden="true">📞</span>
+          <a href="tel:+255764050857">0764 050 857</a>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       2. PAGE NAVIGATION
+       Sticky bar: table menu, featured food, about.
+       ========================================== -->
+  <nav class="page-nav" aria-label="Page sections">
+    <div class="page-nav-scroll">
+      <a class="nav-pill" href="index1.html">Table Menu</a>
+      <a class="nav-pill" href="#featured">Featured Food</a>
+      <a class="nav-pill" href="#about">About Natasha</a>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- ==========================================
+         3. TABLE MENU
+         The main action on this page.
+         ========================================== -->
+    <section class="menu-cta" id="menu" aria-labelledby="menu-heading">
+      <div class="menu-cta-inner">
+
+        <h2 id="menu-heading" class="menu-cta-title">Table Menu</h2>
+
+        <p class="menu-cta-text">
+          Starters, main dishes, sizzlers and sides, with all prices.
+        </p>
+
+        <a href="index1.html" class="menu-cta-button">
+          View Table Menu
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         4. FEATURED FOOD
+         Photo slots. Put six photos in the images folder named
+         featured-1.jpg to featured-6.jpg (or change the src below).
+         Until a photo exists, a placeholder with the file name shows.
+         ========================================== -->
+    <section class="featured" id="featured" aria-labelledby="featured-heading">
+
+      <h2 id="featured-heading" class="section-heading">Featured Food</h2>
+
+      <div class="featured-grid">
+
+        <figure class="dish-photo">
+          <span class="dish-placeholder" aria-hidden="true">featured-1.jpg</span>
+          <img
+            src="images/featured-1.jpg"
+            alt="The Original Gajjar Chicken"
+            loading="lazy"
+            onerror="this.classList.add('is-missing')"
+          >
+        </figure>
+
+        <figure class="dish-photo">
+          <span class="dish-placeholder" aria-hidden="true">featured-2.jpg</span>
+          <img
+            src="images/featured-2.jpg"
+            alt="Natasha Fried Chicken"
+            loading="lazy"
+            onerror="this.classList.add('is-missing')"
+          >
+        </figure>
+
+        <figure class="dish-photo">
+          <span class="dish-placeholder" aria-hidden="true">featured-3.jpg</span>
+          <img
+            src="images/featured-3.jpg"
+            alt="Charcoal Grilled Chicken Fillet"
+            loading="lazy"
+            onerror="this.classList.add('is-missing')"
+          >
+        </figure>
+
+        <figure class="dish-photo">
+          <span class="dish-placeholder" aria-hidden="true">featured-4.jpg</span>
+          <img
+            src="images/featured-4.jpg"
+            alt="Red Snapper Periperi"
+            loading="lazy"
+            onerror="this.classList.add('is-missing')"
+          >
+        </figure>
+
+        <figure class="dish-photo">
+          <span class="dish-placeholder" aria-hidden="true">featured-5.jpg</span>
+          <img
+            src="images/featured-5.jpg"
+            alt="Beef Mishikaki Masala"
+            loading="lazy"
+            onerror="this.classList.add('is-missing')"
+          >
+        </figure>
+
+        <figure class="dish-photo">
+          <span class="dish-placeholder" aria-hidden="true">featured-6.jpg</span>
+          <img
+            src="images/featured-6.jpg"
+            alt="Prawns Pilipili"
+            loading="lazy"
+            onerror="this.classList.add('is-missing')"
+          >
+        </figure>
+
+      </div>
+
+      <p class="featured-more">
+        See every dish on the <a href="index1.html">table menu</a>.
+      </p>
+
+    </section>
+
+
+    <!-- ==========================================
+         5. ABOUT NATASHA
+         Replace this text with Natasha's own story
+         (year started, who runs it, location) when ready.
+         ========================================== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+
+      <h2 id="about-heading" class="section-heading">About Natasha</h2>
+
+      <div class="about-text">
+
+        <p class="about-lead">The Original Gajjar.</p>
+
+        <p>
+          Natasha BBQ is built around fire. Our chicken, mishikaki, nundu and
+          fish come off the charcoal grill, and our signature is the Original
+          Gajjar Chicken.
+        </p>
+
+        <p>
+          Choose from starters, main dishes, sizzlers and sides, from chicken
+          wings and lamb chops to red snapper and prawns, with fries on the side.
+        </p>
+
+        <p>
+          Sit down, open the table menu and order from your table.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================
+       6. WEBSITE FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <p class="footer-name">Natasha BBQ</p>
+      <p class="footer-tagline">The Original Gajjar</p>
+
+      <div class="footer-details">
+
+        <p>
+          <span aria-hidden="true">📍</span> Mtendeni Street, Dar es Salaam.
+        </p>
+
+        <p>
+          <span aria-hidden="true">📞</span>
+          <a href="tel:+255764050857">0764 050 857</a>
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Copyright Year: Populated by script.js -->
+    <p class="footer-copyright">
+      © <span id="year"></span> Natasha BBQ. All rights reserved.
+    </p>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

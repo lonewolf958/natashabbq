@@ -1,0 +1,576 @@
+/* ==========================================================================
+   NATASHA BBQ
+   File: style.css  (used by index.html, the landing page)
+
+   DESIGN:
+   Matches the table menu (style1.css): black background, flame red,
+   brush-script headings, serif body text.
+
+   NOTE:
+   The table menu page (index1.html) uses style1.css, not this file.
+   If you change colors, update the tokens in both files.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+  --black: #0d0d0d;
+  --char: #171515;
+  --char-2: #221e1d;
+  --flame: #d8392b;
+  --flame-dark: #a82419;
+  --paper: #fffdf8;
+  --ember: #e9c9a0;
+  --muted: #b7aca3;
+  --line: rgba(255, 253, 248, 0.14);
+
+  --font-display: "Kaushan Script", "Brush Script MT", cursive;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+
+  --max: 960px;
+}
+
+
+/* ==========================================================================
+   2. BASE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+
+  background: var(--black);
+  color: var(--paper);
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   3. HEADER
+   ========================================================================== */
+
+.site-header {
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(216, 57, 43, 0.28),
+      transparent 65%
+    ),
+    var(--black);
+
+  padding: max(22px, env(safe-area-inset-top)) 18px 26px;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  max-width: var(--max);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.brand-logo {
+  width: 140px;
+  height: 140px;
+
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 3px var(--flame),
+    0 0 40px rgba(216, 57, 43, 0.45);
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 8vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.brand-tagline {
+  color: var(--ember);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+
+/* Location and contact under the tagline. */
+.header-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+
+  margin-top: 6px;
+  padding-top: 14px;
+
+  border-top: 1px solid var(--line);
+
+  font-size: 15px;
+}
+
+.header-strip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.header-strip-item a {
+  text-underline-offset: 3px;
+}
+
+.header-strip-item a:hover {
+  color: var(--ember);
+}
+
+
+/* ==========================================================================
+   4. PAGE NAVIGATION
+   Sticky red bar. Same pills as the table menu.
+   ========================================================================== */
+
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: var(--flame);
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.8);
+}
+
+.page-nav-scroll {
+  display: flex;
+  gap: 10px;
+
+  padding: 12px 16px;
+
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.page-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-pill:first-child {
+  margin-left: auto;
+}
+
+.nav-pill:last-child {
+  margin-right: auto;
+}
+
+.nav-pill {
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 40px;
+  padding: 8px 20px;
+
+  border: 1.5px solid rgba(255, 253, 248, 0.7);
+  border-radius: 999px;
+
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: background-color 0.2s ease;
+}
+
+.nav-pill:hover {
+  background: rgba(13, 13, 13, 0.2);
+}
+
+/* The Table Menu pill is filled so it reads as the main action. */
+.nav-pill:first-child {
+  background: var(--black);
+  border-color: var(--black);
+}
+
+.nav-pill:first-child:hover {
+  background: var(--char-2);
+}
+
+.nav-pill:focus-visible {
+  outline: 3px solid var(--paper);
+  outline-offset: 2px;
+}
+
+
+/* ==========================================================================
+   5. SECTION HEADINGS
+   Red brush-stroke labels, same as the table menu categories.
+   ========================================================================== */
+
+.section-heading {
+  display: inline-block;
+
+  margin-bottom: 20px;
+  padding: 6px 34px 10px 22px;
+
+  background: var(--flame);
+  color: var(--paper);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+
+  clip-path: polygon(
+    0 6%, 4% 0, 96% 3%, 100% 0,
+    97% 38%, 100% 62%, 96% 100%,
+    4% 96%, 0 100%
+  );
+}
+
+
+/* ==========================================================================
+   6. TABLE MENU
+   Full-width red panel. This is the main action on the page.
+   ========================================================================== */
+
+.menu-cta {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 36px 20px 8px;
+
+  /* Keeps the section below the sticky bar when jumped to. */
+  scroll-margin-top: 64px;
+}
+
+.menu-cta-inner {
+  padding: 36px 22px;
+
+  background: var(--flame);
+  border-radius: 6px;
+
+  text-align: center;
+}
+
+.menu-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.menu-cta-text {
+  max-width: 34ch;
+  margin: 8px auto 22px;
+
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.menu-cta-button {
+  display: inline-block;
+
+  padding: 14px 34px;
+
+  background: var(--black);
+  border-radius: 999px;
+
+  color: var(--paper);
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: background-color 0.2s ease;
+}
+
+.menu-cta-button:hover {
+  background: var(--char-2);
+}
+
+.menu-cta-button:focus-visible {
+  outline: 3px solid var(--paper);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   7. FEATURED FOOD
+   ========================================================================== */
+
+.featured {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 44px 20px 8px;
+
+  scroll-margin-top: 56px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Photo slot. The placeholder sits underneath the image and
+   shows only when the image file is missing. */
+.dish-photo {
+  position: relative;
+
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  background: var(--char-2);
+  border: 1px solid var(--line);
+  border-bottom: 3px solid var(--flame);
+  border-radius: 6px;
+}
+
+.dish-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.dish-photo img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hide a broken image so the placeholder shows. */
+.dish-photo img.is-missing {
+  display: none;
+}
+
+.featured-more {
+  margin-top: 18px;
+
+  color: var(--muted);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.featured-more a {
+  color: var(--ember);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   8. ABOUT NATASHA
+   ========================================================================== */
+
+.about {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 44px 20px 64px;
+
+  scroll-margin-top: 56px;
+}
+
+.about-text {
+  max-width: 60ch;
+}
+
+.about-text p {
+  margin-bottom: 1em;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.about-text .about-lead {
+  margin-bottom: 0.4em;
+
+  color: var(--flame);
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  line-height: 1.2;
+}
+
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+
+.site-footer {
+  padding: 30px 18px max(24px, env(safe-area-inset-bottom));
+
+  background: var(--char);
+  border-top: 3px solid var(--flame);
+
+  text-align: center;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.footer-tagline {
+  color: var(--ember);
+  font-style: italic;
+}
+
+.footer-details {
+  margin-top: 14px;
+}
+
+.footer-details p {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.footer-details a {
+  text-underline-offset: 3px;
+}
+
+.footer-details a:hover {
+  color: var(--ember);
+}
+
+.footer-copyright {
+  max-width: var(--max);
+  margin: 20px auto 0;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* ==========================================================================
+   10. SCROLL-REVEAL
+   script.js adds .reveal, then .is-visible when a section appears.
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   11. TABLETS AND DESKTOPS (700px and up)
+   ========================================================================== */
+
+@media (min-width: 700px) {
+
+  .brand-logo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .menu-cta-inner {
+    padding: 48px 32px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+
+/* ==========================================================================
+   12. SMALL MOBILE SCREENS (380px and under)
+   ========================================================================== */
+
+@media (max-width: 380px) {
+
+  .brand-logo {
+    width: 118px;
+    height: 118px;
+  }
+
+  .nav-pill {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+
+/* ==========================================================================
+   13. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
