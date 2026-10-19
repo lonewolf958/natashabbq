@@ -139,30 +139,61 @@ p {
 /* Location and contact under the tagline. */
 .header-strip {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 
+  width: 100%;
   margin-top: 6px;
-  padding-top: 14px;
+  padding-top: 16px;
 
   border-top: 1px solid var(--line);
-
-  font-size: 15px;
 }
 
-.header-strip-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.header-strip-item a {
-  text-underline-offset: 3px;
-}
-
-.header-strip-item a:hover {
+.header-location {
   color: var(--ember);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Phone numbers: equal-width tappable pills, stacked on mobile. */
+.header-phones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+}
+
+.phone-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  max-width: 240px;
+  min-height: 44px;
+
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--char);
+
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.phone-chip:hover,
+.phone-chip:focus-visible {
+  background: var(--char-2);
+  border-color: var(--flame);
 }
 
 
@@ -354,46 +385,38 @@ p {
   gap: 10px;
 }
 
-/* Photo slot. The placeholder sits underneath the image and
-   shows only when the image file is missing. */
+/* Photo card: the whole image is always shown (no cropping),
+   with the dish name underneath. */
 .dish-photo {
-  position: relative;
-
   margin: 0;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
 
-  background: var(--char-2);
+  background: var(--char);
   border: 1px solid var(--line);
   border-bottom: 3px solid var(--flame);
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-.dish-placeholder {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: var(--muted);
-  font-size: 13px;
-  font-style: italic;
+.dish-frame {
+  aspect-ratio: 1 / 1;
+  background: var(--black);
 }
 
-.dish-photo img {
-  position: absolute;
-  inset: 0;
-
+.dish-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
-/* Hide a broken image so the placeholder shows. */
-.dish-photo img.is-missing {
-  display: none;
+.dish-name {
+  padding: 10px 8px 12px;
+
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  text-align: center;
 }
 
 .featured-more {
@@ -522,6 +545,21 @@ p {
    ========================================================================== */
 
 @media (min-width: 700px) {
+
+  .header-phones {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .phone-chip {
+    width: auto;
+    max-width: none;
+    padding: 0 22px;
+  }
+
+  .dish-name {
+    font-size: 16px;
+  }
 
   .brand-logo {
     width: 160px;
